@@ -1,0 +1,443 @@
+2021-02-23 15:31:34.316  INFO 15276 --- [restartedMain] com.xxd.blog.BlogApplication             : Starting BlogApplication on LAPTOP-AP8VR03K with PID 15276 (C:\Users\王形友\Desktop\blog-master\target\classes started by 王形友 in C:\Users\王形友\Desktop\blog-master)
+2021-02-23 15:31:34.331 DEBUG 15276 --- [restartedMain] com.xxd.blog.BlogApplication             : Running with Spring Boot v2.3.7.RELEASE, Spring v5.2.12.RELEASE
+2021-02-23 15:31:34.332  INFO 15276 --- [restartedMain] com.xxd.blog.BlogApplication             : The following profiles are active: dev
+2021-02-23 15:31:34.416  INFO 15276 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-23 15:31:34.418  INFO 15276 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-23 15:31:35.518  INFO 15276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-23 15:31:35.653  INFO 15276 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123ms. Found 5 JPA repository interfaces.
+2021-02-23 15:31:36.986  INFO 15276 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-23 15:31:37.010  INFO 15276 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-23 15:31:37.012  INFO 15276 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-23 15:31:37.211  INFO 15276 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-23 15:31:37.212  INFO 15276 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2793 ms
+2021-02-23 15:31:37.608  INFO 15276 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-23 15:31:37.679  INFO 15276 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2021-02-23 15:31:37.889  INFO 15276 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-23 15:31:38.053  INFO 15276 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-23 15:31:38.371  INFO 15276 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-23 15:31:38.403  INFO 15276 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-02-23 15:31:39.461  WARN 15276 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table t_blog_tags add constraint FK5feau0gb4lq47fdb03uboswm8 foreign key (tags_id) references t_tag (id)" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table t_blog_tags add constraint FK5feau0gb4lq47fdb03uboswm8 foreign key (tags_id) references t_tag (id)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:504)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:433)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:249)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1109)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.xxd.blog.BlogApplication.main(BlogApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`blog`.`#sql-1104_205`, CONSTRAINT `FK5feau0gb4lq47fdb03uboswm8` FOREIGN KEY (`tags_id`) REFERENCES `t_tag` (`id`))
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:935)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3970)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3906)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2524)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2545)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2503)
+	at com.mysql.jdbc.StatementImpl.executeInternal(StatementImpl.java:839)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:739)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 39 common frames omitted
+
+2021-02-23 15:31:39.501  WARN 15276 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table t_blog_tags add constraint FKh4pacwjwofrugxa9hpwaxg6mr foreign key (blogs_id) references t_blog (id)" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table t_blog_tags add constraint FKh4pacwjwofrugxa9hpwaxg6mr foreign key (blogs_id) references t_blog (id)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:504)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:433)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:249)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1109)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.xxd.blog.BlogApplication.main(BlogApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`blog`.`#sql-1104_205`, CONSTRAINT `FKh4pacwjwofrugxa9hpwaxg6mr` FOREIGN KEY (`blogs_id`) REFERENCES `t_blog` (`id`))
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:935)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3970)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3906)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2524)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2545)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2503)
+	at com.mysql.jdbc.StatementImpl.executeInternal(StatementImpl.java:839)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:739)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 39 common frames omitted
+
+2021-02-23 15:31:39.510  INFO 15276 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-23 15:31:39.518  INFO 15276 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-23 15:31:39.598  INFO 15276 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-23 15:31:40.755  WARN 15276 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-23 15:31:41.026  INFO 15276 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-23 15:31:41.218  INFO 15276 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-02-23 15:31:41.777  INFO 15276 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-23 15:31:41.789  INFO 15276 --- [restartedMain] com.xxd.blog.BlogApplication             : Started BlogApplication in 8.501 seconds (JVM running for 12.148)
+2021-02-23 15:31:49.558  INFO 15276 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-23 15:31:49.559  INFO 15276 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-23 15:31:49.577  INFO 15276 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2021-02-23 15:31:49.616  INFO 15276 --- [http-nio-8080-exec-2] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 15:31:49.748  WARN 15276 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2021-02-23 15:31:49.768  WARN 15276 --- [http-nio-8080-exec-2] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2021-02-23 15:31:49.777  INFO 15276 --- [http-nio-8080-exec-2] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 15:31:50.836  INFO 15276 --- [http-nio-8080-exec-3] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:31:50.847  INFO 15276 --- [http-nio-8080-exec-3] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:32:04.220  INFO 15276 --- [http-nio-8080-exec-5] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/types/2', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.TypeShowController.types', args=[Page request [number: 0, size 6, sort: updateTime: DESC], 2, {}]}
+2021-02-23 15:32:04.240  INFO 15276 --- [http-nio-8080-exec-5] com.xxd.blog.aspect.LogAspect            : Result : types
+2021-02-23 15:32:04.684  INFO 15276 --- [http-nio-8080-exec-1] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:32:04.692  INFO 15276 --- [http-nio-8080-exec-1] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:32:26.484  INFO 15276 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 15:32:26.507  INFO 15276 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 15:32:26.956  INFO 15276 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:32:26.963  INFO 15276 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:33:42.668  WARN 15276 --- [http-nio-8080-exec-1] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [825] milliseconds.
+2021-02-23 15:34:31.242  INFO 15276 --- [http-nio-8080-exec-4] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 15:34:31.268  INFO 15276 --- [http-nio-8080-exec-4] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 15:34:31.754  INFO 15276 --- [http-nio-8080-exec-3] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:34:31.765  INFO 15276 --- [http-nio-8080-exec-3] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:34:47.618  INFO 15276 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.about', args=[]}
+2021-02-23 15:34:47.619  INFO 15276 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Result : about
+2021-02-23 15:34:48.044  INFO 15276 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:34:48.051  INFO 15276 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:34:53.469  INFO 15276 --- [http-nio-8080-exec-5] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.ArchiveShowController.archives', args=[{}]}
+2021-02-23 15:34:53.496  INFO 15276 --- [http-nio-8080-exec-5] com.xxd.blog.aspect.LogAspect            : Result : archives
+2021-02-23 15:34:53.886  INFO 15276 --- [http-nio-8080-exec-1] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:34:53.893  INFO 15276 --- [http-nio-8080-exec-1] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:34:58.324  INFO 15276 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.TagShowController.tags', args=[Page request [number: 0, size 6, sort: updateTime: DESC], -1, {}]}
+2021-02-23 15:34:58.347  INFO 15276 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Result : tags
+2021-02-23 15:34:58.777  INFO 15276 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:34:58.787  INFO 15276 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:35:01.360  INFO 15276 --- [http-nio-8080-exec-5] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.TypeShowController.types', args=[Page request [number: 0, size 6, sort: updateTime: DESC], -1, {}]}
+2021-02-23 15:35:01.371  INFO 15276 --- [http-nio-8080-exec-5] com.xxd.blog.aspect.LogAspect            : Result : types
+2021-02-23 15:35:01.769  INFO 15276 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:35:01.776  INFO 15276 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:35:06.660  INFO 15276 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 15:35:06.675  INFO 15276 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 15:35:07.110  INFO 15276 --- [http-nio-8080-exec-2] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:35:07.117  INFO 15276 --- [http-nio-8080-exec-2] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:35:10.280  INFO 15276 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/blog/1577870084710', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.blog', args=[1577870084710, {}]}
+2021-02-23 15:35:10.374  INFO 15276 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Result : blog
+2021-02-23 15:35:10.853  INFO 15276 --- [http-nio-8080-exec-3] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:35:10.859  INFO 15276 --- [http-nio-8080-exec-3] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:35:10.992  INFO 15276 --- [http-nio-8080-exec-5] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/comments/1577870084710', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.CommentController.comments', args=[1577870084710, {}]}
+2021-02-23 15:35:11.018  INFO 15276 --- [http-nio-8080-exec-5] com.xxd.blog.aspect.LogAspect            : Result : blog :: commentList
+2021-02-23 15:35:41.270  INFO 15276 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 15:35:41.288  INFO 15276 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 15:35:41.737  INFO 15276 --- [http-nio-8080-exec-6] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:35:41.742  INFO 15276 --- [http-nio-8080-exec-6] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:40:27.022  INFO 15276 --- [http-nio-8080-exec-6] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 15:40:27.038  INFO 15276 --- [http-nio-8080-exec-6] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 15:40:27.637  INFO 15276 --- [http-nio-8080-exec-4] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:40:27.643  INFO 15276 --- [http-nio-8080-exec-4] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:47:03.924  INFO 16524 --- [restartedMain] com.xxd.blog.BlogApplication             : Starting BlogApplication on LAPTOP-AP8VR03K with PID 16524 (C:\Users\王形友\Desktop\blog-master\target\classes started by 王形友 in C:\Users\王形友\Desktop\blog-master)
+2021-02-23 15:47:03.927 DEBUG 16524 --- [restartedMain] com.xxd.blog.BlogApplication             : Running with Spring Boot v2.3.7.RELEASE, Spring v5.2.12.RELEASE
+2021-02-23 15:47:03.927  INFO 16524 --- [restartedMain] com.xxd.blog.BlogApplication             : The following profiles are active: dev
+2021-02-23 15:47:03.995  INFO 16524 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-23 15:47:03.995  INFO 16524 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-23 15:47:04.841  INFO 16524 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-23 15:47:04.949  INFO 16524 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98ms. Found 5 JPA repository interfaces.
+2021-02-23 15:47:05.886  INFO 16524 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-02-23 15:47:05.900  INFO 16524 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-02-23 15:47:05.900  INFO 16524 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-23 15:47:06.032  INFO 16524 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-02-23 15:47:06.033  INFO 16524 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2037 ms
+2021-02-23 15:47:06.319  INFO 16524 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-23 15:47:06.387  INFO 16524 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2021-02-23 15:47:06.562  INFO 16524 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-23 15:47:06.705  INFO 16524 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-02-23 15:47:06.910  INFO 16524 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-02-23 15:47:06.932  INFO 16524 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-02-23 15:47:07.837  WARN 16524 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table t_blog_tags add constraint FK5feau0gb4lq47fdb03uboswm8 foreign key (tags_id) references t_tag (id)" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table t_blog_tags add constraint FK5feau0gb4lq47fdb03uboswm8 foreign key (tags_id) references t_tag (id)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:504)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:433)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:249)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1109)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.xxd.blog.BlogApplication.main(BlogApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`blog`.`#sql-1104_20f`, CONSTRAINT `FK5feau0gb4lq47fdb03uboswm8` FOREIGN KEY (`tags_id`) REFERENCES `t_tag` (`id`))
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:935)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3970)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3906)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2524)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2545)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2503)
+	at com.mysql.jdbc.StatementImpl.executeInternal(StatementImpl.java:839)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:739)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 39 common frames omitted
+
+2021-02-23 15:47:07.876  WARN 16524 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "alter table t_blog_tags add constraint FKh4pacwjwofrugxa9hpwaxg6mr foreign key (blogs_id) references t_blog (id)" via JDBC Statement
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "alter table t_blog_tags add constraint FKh4pacwjwofrugxa9hpwaxg6mr foreign key (blogs_id) references t_blog (id)" via JDBC Statement
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:67)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlString(AbstractSchemaMigrator.java:559)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applySqlStrings(AbstractSchemaMigrator.java:504)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.applyForeignKeys(AbstractSchemaMigrator.java:433)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.performMigration(AbstractSchemaMigrator.java:249)
+	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:114)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:316)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:469)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1259)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1790)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1109)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:869)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:405)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.xxd.blog.BlogApplication.main(BlogApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`blog`.`#sql-1104_20f`, CONSTRAINT `FKh4pacwjwofrugxa9hpwaxg6mr` FOREIGN KEY (`blogs_id`) REFERENCES `t_blog` (`id`))
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:935)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3970)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3906)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2524)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2545)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2503)
+	at com.mysql.jdbc.StatementImpl.executeInternal(StatementImpl.java:839)
+	at com.mysql.jdbc.StatementImpl.execute(StatementImpl.java:739)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:54)
+	... 39 common frames omitted
+
+2021-02-23 15:47:07.883  INFO 16524 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-23 15:47:07.891  INFO 16524 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-23 15:47:07.967  INFO 16524 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-02-23 15:47:09.001  WARN 16524 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-23 15:47:09.254  INFO 16524 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-23 15:47:09.381  INFO 16524 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-02-23 15:47:09.938  INFO 16524 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-23 15:47:09.949  INFO 16524 --- [restartedMain] com.xxd.blog.BlogApplication             : Started BlogApplication in 6.898 seconds (JVM running for 9.463)
+2021-02-23 15:47:17.743  INFO 16524 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-23 15:47:17.745  INFO 16524 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-02-23 15:47:17.762  INFO 16524 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2021-02-23 15:47:17.797  INFO 16524 --- [http-nio-8080-exec-1] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 15:47:17.902  WARN 16524 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2021-02-23 15:47:17.916  WARN 16524 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2021-02-23 15:47:17.924  INFO 16524 --- [http-nio-8080-exec-1] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 15:47:19.081  INFO 16524 --- [http-nio-8080-exec-3] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:47:19.091  INFO 16524 --- [http-nio-8080-exec-3] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:47:40.876  INFO 16524 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 15:47:40.908  INFO 16524 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 15:47:41.400  INFO 16524 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:47:41.408  INFO 16524 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:50:28.129  INFO 16524 --- [http-nio-8080-exec-6] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.TypeShowController.types', args=[Page request [number: 0, size 6, sort: updateTime: DESC], -1, {}]}
+2021-02-23 15:50:28.145  INFO 16524 --- [http-nio-8080-exec-6] com.xxd.blog.aspect.LogAspect            : Result : types
+2021-02-23 15:50:28.654  INFO 16524 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:50:28.663  INFO 16524 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:50:32.968  INFO 16524 --- [http-nio-8080-exec-1] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 15:50:32.985  INFO 16524 --- [http-nio-8080-exec-1] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 15:50:33.403  INFO 16524 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:50:33.411  INFO 16524 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:50:34.299  INFO 16524 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/blog/1577870084710', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.blog', args=[1577870084710, {}]}
+2021-02-23 15:50:34.387  INFO 16524 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Result : blog
+2021-02-23 15:50:34.825  INFO 16524 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:50:34.832  INFO 16524 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:50:34.954  INFO 16524 --- [http-nio-8080-exec-6] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/comments/1577870084710', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.CommentController.comments', args=[1577870084710, {}]}
+2021-02-23 15:50:34.997  INFO 16524 --- [http-nio-8080-exec-6] com.xxd.blog.aspect.LogAspect            : Result : blog :: commentList
+2021-02-23 15:50:53.850  INFO 16524 --- [http-nio-8080-exec-5] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 15:50:53.866  INFO 16524 --- [http-nio-8080-exec-5] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 15:50:54.322  INFO 16524 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:50:54.329  INFO 16524 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:50:56.241  INFO 16524 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/blog/1577793147252', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.blog', args=[1577793147252, {}]}
+2021-02-23 15:50:56.256  INFO 16524 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Result : blog
+2021-02-23 15:50:56.630  INFO 16524 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:50:56.639  INFO 16524 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:50:56.832  INFO 16524 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/comments/1577793147252', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.CommentController.comments', args=[1577793147252, {}]}
+2021-02-23 15:50:56.840  INFO 16524 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Result : blog :: commentList
+2021-02-23 15:51:24.112  INFO 16524 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.about', args=[]}
+2021-02-23 15:51:24.113  INFO 16524 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Result : about
+2021-02-23 15:51:24.551  INFO 16524 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:51:24.562  INFO 16524 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:52:02.352  INFO 16524 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 15:52:02.373  INFO 16524 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 15:52:02.839  INFO 16524 --- [http-nio-8080-exec-4] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:52:02.845  INFO 16524 --- [http-nio-8080-exec-4] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 15:52:04.490  INFO 16524 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.about', args=[]}
+2021-02-23 15:52:04.490  INFO 16524 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Result : about
+2021-02-23 15:52:04.877  INFO 16524 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 15:52:04.883  INFO 16524 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 16:44:18.896  INFO 16524 --- [http-nio-8080-exec-6] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 16:44:18.943  INFO 16524 --- [http-nio-8080-exec-6] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 16:44:19.481  INFO 16524 --- [http-nio-8080-exec-3] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 16:44:19.489  INFO 16524 --- [http-nio-8080-exec-3] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 16:45:34.236  INFO 16524 --- [http-nio-8080-exec-6] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 16:45:34.254  INFO 16524 --- [http-nio-8080-exec-6] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 16:45:34.752  INFO 16524 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 16:45:34.759  INFO 16524 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 16:48:51.050  INFO 16524 --- [http-nio-8080-exec-2] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 16:48:51.081  INFO 16524 --- [http-nio-8080-exec-2] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 16:48:55.248  INFO 16524 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 16:48:55.264  INFO 16524 --- [http-nio-8080-exec-8] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 16:48:55.734  INFO 16524 --- [http-nio-8080-exec-1] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 16:48:55.740  INFO 16524 --- [http-nio-8080-exec-1] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 16:49:00.975  INFO 16524 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 16:49:00.988  INFO 16524 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 16:49:01.389  INFO 16524 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 16:49:01.394  INFO 16524 --- [http-nio-8080-exec-9] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 16:51:09.755  INFO 16524 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 16:51:09.770  INFO 16524 --- [http-nio-8080-exec-7] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 16:51:10.218  INFO 16524 --- [http-nio-8080-exec-5] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 16:51:10.223  INFO 16524 --- [http-nio-8080-exec-5] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 20:08:44.897  INFO 16524 --- [http-nio-8080-exec-2] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 20:08:44.978  INFO 16524 --- [http-nio-8080-exec-2] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 20:08:45.956  INFO 16524 --- [http-nio-8080-exec-3] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 20:08:45.967  INFO 16524 --- [http-nio-8080-exec-3] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
+2021-02-23 20:09:16.016  INFO 16524 --- [http-nio-8080-exec-2] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.index', args=[Page request [number: 0, size 6, sort: updateTime: DESC], {}]}
+2021-02-23 20:09:16.031  INFO 16524 --- [http-nio-8080-exec-2] com.xxd.blog.aspect.LogAspect            : Result : index
+2021-02-23 20:09:16.735  INFO 16524 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Request : {url='http://localhost:8080/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xxd.blog.web.IndexController.newblogs', args=[{}]}
+2021-02-23 20:09:16.740  INFO 16524 --- [http-nio-8080-exec-10] com.xxd.blog.aspect.LogAspect            : Result : _fragments :: newblogList
